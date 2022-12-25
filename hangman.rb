@@ -1,12 +1,13 @@
 puts 'Hangman initialized.'
 
-p File.exists? "google-10000-english-no-swears.txt"
 # Creates a string of the whole file
 contents = File.read('google-10000-english-no-swears.txt')
 
 # Creates an array of each lines
 lines = File.readlines('google-10000-english-no-swears.txt')
 
+# For checking
+p File.exists? "google-10000-english-no-swears.txt"
 p contents.class
 p lines.class
 p lines[0]
@@ -26,3 +27,6 @@ loop do
 end
 
 p word
+
+# blank array to hold ( _ _ _ _ ), no space needed
+array = []
