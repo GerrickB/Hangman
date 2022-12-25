@@ -30,3 +30,10 @@ p word
 
 # blank array to hold ( _ _ _ _ ), no space needed
 array = []
+
+# pushes _ based on the word's length
+word.length.times do 
+  array.push('_')
+end
+
+p array
