@@ -1,18 +1,20 @@
 puts 'Hangman initialized.'
+p File.exists? "google-10000-english-no-swears.txt"
 
 # Creates a string of the whole file
-contents = File.read('google-10000-english-no-swears.txt')
+# contents = File.read('google-10000-english-no-swears.txt')
+# p contents.class
 
 # Creates an array of each lines
 lines = File.readlines('google-10000-english-no-swears.txt')
 
 # For checking
-p File.exists? "google-10000-english-no-swears.txt"
-p contents.class
-p lines.class
-p lines[0]
-p lines[0].chomp
-p lines.length
+def test_file(file)
+  p file.class
+  p file[0]
+  p file[0].chomp
+  p file.length
+end
 
 # When a new game is started, your script should load in the dictionary 
 # and randomly select a word between 5 and 12 characters long for the secret word.
@@ -38,6 +40,7 @@ end
 
 p array
 
+# get letter from user
 puts "Choose a letter:"
 letter = gets.chomp
 while letter.length != 1 do
