@@ -6,7 +6,7 @@ p File.exists? "google-10000-english-no-swears.txt"
 # p contents.class
 
 # Creates an array of each lines
-file_array = File.readlines('google-10000-english-no-swears.txt')
+file = File.readlines('google-10000-english-no-swears.txt')
 
 # For checking
 def test_file(file)
@@ -18,7 +18,6 @@ end
 
 # When a new game is started, your script should load in the dictionary 
 # and randomly select a word between 5 and 12 characters long for the secret word.
-
 def select_random_word(file)
   word = ''
   loop do
@@ -29,17 +28,21 @@ def select_random_word(file)
   word
 end
 
-p select_random_word(file_array)
-
-# blank array to hold ( _ _ _ _ ), no space needed
-array = []
-
 # pushes _ based on the word's length
-#word.length.times do 
-  #array.push('_')
-#end
+# blank array to hold ( _ _ _ _ ), no space needed
+def create_blank_array(word)
+  array = []
+  word.length.times do 
+    array.push('_')
+  end
+  array
+end
 
-p array
+#test_file(file)
+word = select_random_word(file)
+p word
+
+p create_blank_array(word)
 
 # get letter from user
 puts "Choose a letter:"
