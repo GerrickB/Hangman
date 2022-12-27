@@ -37,3 +37,13 @@ word.length.times do
 end
 
 p array
+
+puts "Choose a letter:"
+letter = gets.chomp
+while letter.length != 1 do
+  puts "Error: Choose only one letter:"
+  letter = gets.chomp
+end
+
+
+
