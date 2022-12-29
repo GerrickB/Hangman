@@ -38,19 +38,28 @@ def create_blank_array(word)
   array
 end
 
+# get letter from user
+def choose_letter()
+  puts "Choose a letter:"
+  letter = gets.chomp
+  while letter.length != 1 do
+    puts "Error: Choose only one letter:"
+    letter = gets.chomp
+  end
+  letter
+end
+
 #test_file(file)
 word = select_random_word(file)
 p word
 
-p create_blank_array(word)
+blank_array = create_blank_array(word)
 
-# get letter from user
-puts "Choose a letter:"
-letter = gets.chomp
-while letter.length != 1 do
-  puts "Error: Choose only one letter:"
-  letter = gets.chomp
-end
+p blank_array
+
+letter = choose_letter()
+p letter
+
 
 
 
