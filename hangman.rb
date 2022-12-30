@@ -54,12 +54,18 @@ guesses = 5
 word = select_random_word(file)
 p word
 
-blank_array = create_blank_array(word)
+array = create_blank_array(word)
 
-p blank_array
+p array
 
-letter = choose_letter()
-p letter
+input = choose_letter()
+p input
 
-
-
+index = 0
+word.each_char do |letter|
+  if letter == input
+    array[index] = letter
+  end
+  index += 1
+end
+p array
