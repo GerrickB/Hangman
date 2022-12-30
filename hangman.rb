@@ -49,6 +49,7 @@ def choose_letter()
   letter
 end
 
+guesses = 5
 #test_file(file)
 word = select_random_word(file)
 p word
@@ -59,7 +60,6 @@ p blank_array
 
 letter = choose_letter()
 p letter
-
 
 
 
