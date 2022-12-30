@@ -49,23 +49,30 @@ def choose_letter()
   letter
 end
 
-guesses = 5
+def check_answer(word, array, input)
+  index = 0
+  puts "Does the word include letter?"
+  puts word.include?(input)
+  word.each_char do |letter|
+    if letter == input
+      array[index] = letter
+    end
+    index += 1
+  end
+end
+
 #test_file(file)
 word = select_random_word(file)
 p word
 
 array = create_blank_array(word)
-
 p array
+
+guesses = 5
 
 input = choose_letter()
-p input
 
-index = 0
-word.each_char do |letter|
-  if letter == input
-    array[index] = letter
-  end
-  index += 1
-end
+check_answer(word, array, input)
 p array
+puts "guesses left: #{guesses}"
+
