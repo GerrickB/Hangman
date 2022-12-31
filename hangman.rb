@@ -49,7 +49,7 @@ def choose_letter()
   letter
 end
 
-def check_letter(input)
+def check_letter(input, word)
   puts "Does the word include letter?"
   puts word.include?(input)
   word.include?(input)
@@ -74,11 +74,17 @@ p array
 
 guesses = 5
 
-input = choose_letter()
-
-check_answer(word, array, input)
-
-p array
-
-puts "guesses left: #{guesses}"
+while guesses > 0 do
+  input = choose_letter()
+  if check_letter(input, word) == false
+    guesses -= 1
+  end
+  check_answer(word, array, input)
+  p array
+  puts "guesses left: #{guesses}"
+  if array.include?('_') == false
+    puts "You won"
+    break
+  end
+end
 
