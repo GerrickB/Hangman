@@ -49,10 +49,14 @@ def choose_letter()
   letter
 end
 
-def check_answer(word, array, input)
-  index = 0
+def check_letter(input)
   puts "Does the word include letter?"
   puts word.include?(input)
+  word.include?(input)
+end
+
+def check_answer(word, array, input)
+  index = 0
   word.each_char do |letter|
     if letter == input
       array[index] = letter
@@ -73,6 +77,8 @@ guesses = 5
 input = choose_letter()
 
 check_answer(word, array, input)
+
 p array
+
 puts "guesses left: #{guesses}"
 
